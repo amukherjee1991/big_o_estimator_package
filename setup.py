@@ -15,7 +15,7 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',  # Python version requirement
+    python_requires='>=3.11',  # Python version requirement
     include_package_data=True,  # Include additional files (like README.md)
     license="MIT",  # License for your package
 )
