@@ -1,19 +1,20 @@
 import ast
 import inspect
 
+
 def estimate_big_o_from_source(source_code):
     """
     Estimate the Big-O complexity of an algorithm based on its source code.
-    
+
     Args:
     source_code (str): The source code of the algorithm to analyze.
-    
+
     Returns:
     str: The estimated Big-O complexity.
     """
     # Parse the source code into an Abstract Syntax Tree (AST)
     tree = ast.parse(source_code)
-    
+
     # Initialize counters for different constructs
     loop_count = 0
     nested_loop_count = 0
@@ -29,9 +30,15 @@ def estimate_big_o_from_source(source_code):
                     nested_loop_count += 1
         elif isinstance(node, ast.FunctionDef):
             # Check for recursive calls within the function definition
-            if any(isinstance(n, ast.Call) and isinstance(n.func, ast.Name) and n.func.id == node.name for n in ast.walk(node) if isinstance(n, ast.Call)):
+            if any(
+                isinstance(n, ast.Call)
+                and isinstance(n.func, ast.Name)
+                and n.func.id == node.name
+                for n in ast.walk(node)
+                if isinstance(n, ast.Call)
+            ):
                 recursion_count += 1
-    
+
     # Determine the Big-O complexity based on the counts
     if recursion_count > 0:
         return "O(2^n) or O(n!) (recursive)"
@@ -42,13 +49,14 @@ def estimate_big_o_from_source(source_code):
     else:
         return "O(1) (constant time)"
 
+
 def get_big_o_of_function(func):
     """
     Get the Big-O complexity of a provided function.
-    
+
     Args:
     func (function): The function to analyze.
-    
+
     Returns:
     str: The estimated Big-O complexity.
     """
