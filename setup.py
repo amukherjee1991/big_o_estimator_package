@@ -1,5 +1,6 @@
 from setuptools import setup, find_packages
 
+
 setup(
     name="big_o_estimator",  # Name of your package
     version="0.1.1",  # Initial release version

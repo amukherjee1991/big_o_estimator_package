@@ -1,7 +1,6 @@
 from big_o_estimator.estimator import get_big_o_of_function
 
 
-# Test functions for different complexities
 def nested_loop_algorithm(n):
     for i in range(n):
         for j in range(n):
@@ -18,11 +17,6 @@ def recursive_algorithm(n):
 def constant_time_algorithm(n):
     return n * 2
 
-
-# Additional test functions...
-
-
-# Test cases
 def test_big_o_estimation():
     results = {
         "Nested Loop Algorithm": get_big_o_of_function(nested_loop_algorithm),
@@ -33,7 +27,6 @@ def test_big_o_estimation():
     return results
 
 
-# Execute test cases
 if __name__ == "__main__":
     test_results = test_big_o_estimation()
     for test_name, result in test_results.items():
