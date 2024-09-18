@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="big_o_estimator",  # Name of your package
-    version="0.1.2",  # Initial release version
+    version="0.1.3",  # Initial release version
     description="A package to estimate Big-O complexity of Python functions.",
     long_description=open("README.md", "r").read(),
     long_description_content_type="text/markdown",  # If your README is in Markdown
